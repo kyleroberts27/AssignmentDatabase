@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"> FPL Team Data 2019-2020 </a>
+    <div class="navbar">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">
+          Home <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link" href="teams"> Teams</a>
+        <a class="nav-link" href="search-teams"> Search Teams</a>
+      
+        <% if(user) { %>
+        <a class="nav-link" href="saved-teams"> Search Teams</a>
+        <a class="nav-link" href="create-team"> Create a Team </a>
+        <a class="nav-link" href="logout"> <%= user.email %> (Logout) </a> <%
+        }%> <% if(!user) { %>
+        <a class="nav-link" href="login"> Login </a>
+        <a class="nav-link" href="join"> Register </a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+</header>
+;
