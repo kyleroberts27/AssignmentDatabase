@@ -65,7 +65,7 @@ async function main() {
     const teams = await teamsRef.toArray();
     await db.collection("teamData").insertMany(teams);
 
-    await db.collection("tastings")
+    await db.collection("teamData")
       .updateMany({ teams: { $all: [null] } }, [
         { $set: { teams: [{ $arrayElemAt: ["$teams", 0] }] } },
       ])
